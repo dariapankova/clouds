@@ -1,21 +1,14 @@
-FROM python:3.8.10
+FROM python:3.12
 
-# Создание пользователя для повышения безопасности
-RUN useradd -m appuser
+RUN apt-get update && useradd app_user && pip install numpy==2.1.1
 
-# Установка зависимостей с явным указанием версии
-RUN pip install numpy==1.21.0
+WORKDIR /Users/riapankova/Documents/docker-project/bad-dockerfile
 
-WORKDIR /app
-
-# Копирование только необходимых файлов
 COPY index.html .
 COPY dolphins.jpeg .
 
-# Переключение на созданного пользователя
-USER appuser
+USER app_user
 
 EXPOSE 8085
 
-ENTRYPOINT ["python3", "-m", "http.server"]
-CMD ["8085"]
+CMD ["python3", "-m", "http.server", "8085"]
