@@ -52,6 +52,7 @@ sudo apt-get update && sudo apt-get install -y python3-pip
 **4. Фиксированная версия зависимостей**
 
 Для каждого из файлов был создан файл с зависимостями [requirements1.txt](https://github.com/dariapankova/clouds/blob/main/lab4/requirements1.txt) для файла с плохими практиками и [requirements2.txt](https://github.com/dariapankova/clouds/blob/main/lab4/requirements2.txt) для файла с хорошими практиками. Отличие в этих файлах не очень большое, но оно так же может привести к несовместимостям и ошибкам.
+
 Так в [requirements1.txt](https://github.com/dariapankova/clouds/blob/main/lab4/requirements1.txt) мы видим, что фиксированную версию ```pytest```, и если она окажется устаревшей это приведет к ошибке.
 ```
 pytest==6.2.4
