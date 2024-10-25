@@ -36,6 +36,19 @@ on:
         with:
           python-version: '3.9'
 ```
+**3. Использование ```sudo``` для установки python**
 
+В плохой версии файла используется системный python, что может привести к несовместимости версий.
+```
+- name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y python3-pip
+```
+В хорошей же версии была настроена изолированная среда python и задана версия 3.9, что помогло избежать несовместимости.
+```
+- name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+```
 ![](images/photo2.jpg)
 
