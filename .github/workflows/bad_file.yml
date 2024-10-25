@@ -1,0 +1,24 @@
+name: Bad CI/CD Pipeline
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y python3-pip
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: pytest tests/
+
+      - name: Deploy to production
+        run: |
+          scp -i $SSH_KEY ./myapp user@production:/app/
+          ssh -i $SSH_KEY user@production 'systemctl restart myapp'
