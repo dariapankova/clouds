@@ -10,6 +10,7 @@
 Сначала были написаны 2 ```.yml``` файла [CI/CD с bad partices](https://github.com/dariapankova/clouds/blob/main/.github/workflows/bad_file.yml) и [CI/CD с good partices](https://github.com/dariapankova/clouds/blob/main/.github/workflows/good_file.yml).
 
 Проведем сравнение этих файлов, описывая плохие практики и их исправление во втором файле.
+
 ** 1. Запуск пайплайна при пуше в любой ветке**
 ```
 on: push
@@ -21,7 +22,7 @@ on:
     branches:
       - main
 ```
-** 2. Отсутствие изоляции версии python**
+__ 2. Отсутствие изоляции версии python__ 
 В плохой версии файла используется системный python, что может привести к несовместимости версий.
 ```
 - name: Install dependencies
