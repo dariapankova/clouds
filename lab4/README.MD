@@ -31,7 +31,7 @@ on:
 - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y python3-pip
 ```
-В хорошей же версии была настроена изолированная среда python и задана версия 3.9, что помогло избежать несовместимости.
+В хорошей же версии была настроена изолированная среда python и задана конкретная версия (в нашем случае 3.9), это может помочь избежать несовместимости.
 ```
 - name: Set up Python
         uses: actions/setup-python@v2
