@@ -15,7 +15,7 @@ jobs:
       - name: Install requirements
         run: |
           cd lab4
-          pip install -r requirements.txt
+          pip install -r requirements1.txt
 
       - name: Run tests
         run: |
