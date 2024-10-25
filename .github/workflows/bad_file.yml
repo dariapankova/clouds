@@ -18,7 +18,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
-        run: pytest test.py
+        run: |
+          cd lab4
+          pytest test.py
 
       - name: Deploy to production
         run: |
