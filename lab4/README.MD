@@ -81,5 +81,5 @@ pytest>=6.2.4
         run: |
           echo "Тесты завершились с ошщибкой, поэтому чай только со слезами"
 ```
-![](https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Frinchenwaltz%2Fstatus%2F1166397850584080387&psig=AOvVaw31gZOj6kC55QBHvCdpdESz&ust=1729960632684000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCh9N37qYkDFQAAAAAdAAAAABAE)
+![](https://sun9-80.userapi.com/impf/u3T7StgdqhkHcN1VP3FNI4Gl8s1EwUKqdL4laQ/_f6KGqoXjlY.jpg?size=1080x713&quality=96&sign=7c82d16686bf80ee2afe6513f38719e6&type=album)
 
