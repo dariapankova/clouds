@@ -24,5 +24,4 @@ jobs:
 
       - name: Deploy to production
         run: |
-          scp -i $SSH_KEY ./myapp user@production:/app/
-          ssh -i $SSH_KEY user@production 'systemctl restart myapp'
+          echo "Вам чай с сахаром или с моими слезами?"
