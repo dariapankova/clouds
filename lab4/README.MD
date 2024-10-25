@@ -81,7 +81,7 @@ pytest>=6.2.4
       - name: Skip deployment
         if: steps.test.outcome != 'success'
         run: |
-          echo "Тесты завершились с ошщибкой, поэтому чай только со слезами"
+          echo "Тесты завершились с ошибкой, поэтому чай только со слезами"
 ```
 ![](https://sun9-80.userapi.com/impf/u3T7StgdqhkHcN1VP3FNI4Gl8s1EwUKqdL4laQ/_f6KGqoXjlY.jpg?size=1080x713&quality=96&sign=7c82d16686bf80ee2afe6513f38719e6&type=album)
 
