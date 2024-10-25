@@ -1,4 +1,4 @@
-from main import add
+from myapp.main import add
 
 def test_add():
     """Тест для функции add."""
