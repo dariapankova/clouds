@@ -48,4 +48,4 @@
 
 ![](images/image9.jpg)
 
-И я наткнулась на эту проблему на [stackoverflow](https://stackoverflow.com/questions/40600419/why-am-i-getting-an-errimagepull-error-in-this-kubernetes-deployment), там посоветовали вставить в yaml пода ```imagePullPolicy: IfNotPresent```. Как ни странно, все заработало.
+И я наткнулась на эту проблему на [stackoverflow](https://stackoverflow.com/questions/40600419/why-am-i-getting-an-errimagepull-error-in-this-kubernetes-deployment), там посоветовали вставить в yaml пода ```imagePullPolicy: Never```. Как ни странно, все заработало.
