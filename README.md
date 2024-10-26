@@ -3,11 +3,11 @@
 
 [Лабораторная 2 + со звездочкой](https://github.com/dariapankova/clouds/tree/main/lab2)
 
-Лабораторная 3
+[Лабораторная 3](https://github.com/dariapankova/clouds/tree/main/lab3)
 
-Лабораторная 4
+[Лабораторная 4](https://github.com/dariapankova/clouds/tree/main/lab4)
 
-Лабораторная 5
+[Лабораторная 5](https://github.com/dariapankova/clouds/tree/main/lab5)
 
 ## Работы выполняли:
 Летелова Анастасия, К34211
