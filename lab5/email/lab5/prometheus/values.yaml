@@ -1,0 +1,70 @@
+alertmanagerFiles:
+  alertmanager.yml:
+    route:
+      receiver: email-alert
+      group_by:
+        - redis_group
+      repeat_interval: 30m
+      routes:
+        - match:
+            severity: critical
+          receiver: email-alert
+
+    receivers:
+      - name: email-alert
+        email_configs:
+          - to: "dariiapankova@gmail.com"
+            send_resolved: true
+            require_tls: true
+            from: "dariiapankova@gmail.com"
+            smarthost: 'smtp.gmail.com:587'
+            auth_username: "dariiapankova@gmail.com" #адрес почты мне не жалко :)
+            auth_password: "тут был app password"
+
+serverFiles:
+  ## Alerts configuration
+  ## Ref: https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/
+  alerting_rules.yml:
+    groups:
+      - name: redis_group
+        rules:
+          - alert: redis_is_running
+            expr: redis_up == 0
+            for: 30s
+            labels:
+              severity: critical
+            annotations:
+              summary: "Critical: Redis is down on the host {{ $labels.instance }}."
+              description: "Redis has been down for more than 30 seconds"
+          - alert: redis_memory_usage
+            expr: redis_memory_used_bytes / redis_memory_max_bytes * 100 > 40
+            for: 20s
+            labels:
+              severity: warning
+            annotations:
+              description: "Warning: Redis high memory(>40%) usage on the host {{ $labels.instance }} for more than 5 minutes"
+              summary: "Redis memory usage {{ humanize $value}}% of the host memory"
+          - alert: redis_master
+            expr: redis_connected_clients{instance!~"server1.mydomain.com.+"} > 50
+            for: 5m
+            labels:
+              severity: warning
+            annotations:
+              description: "Warning: Redis has many connections on the host {{ $labels.instance }} for more than 5 minutes"
+              summary: "Redis number of connections {{ $value }}"
+          - alert: redis_rejected_connections
+            expr: increase(redis_rejected_connections_total[1m]) > 0
+            for: 30s
+            labels:
+              severity: critical
+            annotations:
+              description: "Critical: Redis rejected connections on the host {{ $labels.instance }}"
+              summary: "Redis rejected connections are {{ $value }}"
+          - alert: redis_evicted_keys
+            expr: increase(redis_evicted_keys_total[1m]) > 0
+            for: 30s
+            labels:
+              severity: critical
+            annotations:
+              description: "Critical: Redis evicted keys on the host {{ $labels.instance }}"
+              summary: "Redis evicted keys are {{ $value }}"

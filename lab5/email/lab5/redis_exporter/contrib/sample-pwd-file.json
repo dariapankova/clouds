@@ -1,0 +1,4 @@
+{
+  "redis://localhost:16379": "",
+  "redis://localhost:16380": "redis-password"
+}
