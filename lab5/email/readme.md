@@ -2,5 +2,5 @@
 
 обновлялось вот этой командой
 ```
-helm upgrade prometheus -f **! адрес файла !** prometheus-community/prometheus -n monitoring
+helm upgrade prometheus -f *! адрес файла !* prometheus-community/prometheus -n monitoring
 ```
